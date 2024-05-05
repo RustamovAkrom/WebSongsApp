@@ -1,6 +1,5 @@
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
 
 from app.config import config_mapping
 
@@ -11,9 +10,6 @@ import os
 
 
 app = Flask(__name__)
-login_manager = LoginManager()
-login_manager.init_app(app)
-
 
 #Configurations
 app.config.from_object(config_mapping[os.getenv("FLASK_ENV")])
